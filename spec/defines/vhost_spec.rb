@@ -134,6 +134,18 @@ describe 'apache::vhost', :type => :define do
           :value => '/fake/log',
           :match => [/CustomLog \/fake\/log\//,/ErrorLog \/fake\/log\//],
         },
+       {
+          :title => 'should set passenger high performance on',
+          :attr  => 'passenger_high_performance',
+          :value => true,
+          :match => /PassengerHighPerformance on/,
+        },
+        {
+          :title    => 'should not contain passenger high performance',
+          :attr     => 'passenger_high_performance',
+          :value    => false,
+          :notmatch => /PassengerHighPerformance on/,
+        },
         {
           :title => 'should accept pipe destination for access log',
           :attr  => 'access_log_pipe',

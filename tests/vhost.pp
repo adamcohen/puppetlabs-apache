@@ -183,3 +183,10 @@ apache::vhost { 'subdomain.loc':
   docroot         => '/var/www',
   serveraliases   => ['*.loc',],
 }
+
+# Vhost with PassengerHighPerformance
+apache::vhost { 'twentieth.example.com':
+  port        => '80',
+  docroot     => '/var/www/third',
+  passenger_high_performance => true,
+}
