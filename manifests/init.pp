@@ -28,6 +28,7 @@ class apache (
   $serveradmin          = 'root@localhost',
   $sendfile             = false,
   $error_documents      = false,
+  $additional_log_formats = undef,
   $confd_dir            = $apache::params::confd_dir,
   $vhost_dir            = $apache::params::vhost_dir,
   $mod_dir              = $apache::params::mod_dir,
