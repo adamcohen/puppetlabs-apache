@@ -146,6 +146,18 @@ describe 'apache::vhost', :type => :define do
           :value    => false,
           :notmatch => /PassengerHighPerformance on/,
         },
+       {
+          :title => 'should set passenger ruby',
+          :attr  => 'passenger_ruby',
+          :value => 'path-to-ruby',
+          :match =>  /PassengerRuby path-to-ruby/,
+        },
+        {
+          :title    => 'should not set passenger ruby',
+          :attr     => 'passenger_ruby',
+          :value    => '',
+          :notmatch => /PassengerRuby/,
+        },
         {
           :title => 'should accept pipe destination for access log',
           :attr  => 'access_log_pipe',

@@ -67,6 +67,7 @@ define apache::vhost(
     $docroot_owner              = 'root',
     $docroot_group              = 'root',
     $passenger_high_performance = false,
+    $passenger_ruby             = undef,
     $serveradmin                = false,
     $ssl                        = false,
     $ssl_cert                   = $apache::default_ssl_cert,

@@ -190,3 +190,10 @@ apache::vhost { 'twentieth.example.com':
   docroot     => '/var/www/third',
   passenger_high_performance => true,
 }
+
+# Vhost with PassengerRuby
+apache::vhost { 'twentyfirst.example.com':
+  port        => '80',
+  docroot     => '/var/www/third',
+  passenger_ruby => 'path-to-ruby',
+}

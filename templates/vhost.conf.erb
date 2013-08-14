@@ -18,7 +18,11 @@
 <%= scope.function_template(['apache/vhost/_aliases.erb']) -%>
 
 <% if @passenger_high_performance -%>
-PassengerHighPerformance on   
+  PassengerHighPerformance on   
+<% end -%>
+
+<% unless (@passenger_ruby.nil? || @passenger_ruby.empty?) -%>
+  PassengerRuby <%= @passenger_ruby %>
 <% end -%>
 
   ## Directories, there should at least be a declaration for <%= @docroot %>
